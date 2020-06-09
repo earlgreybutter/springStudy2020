@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="876,271" id="net.javajigi.user" metadata="uml2-1.0" initialized="true" tag="1000" key="3230303530393237205346572FB9DAC0E7BCBA">
+  <children xsi:type="editmodel:InterfaceEditModel" name="UserService" location="230,410" size="167,171" stereotype="interface" id="net.javajigi.user.service/UserService" runTimeClassModel="findUser(Ljava.lang.String;),removeUser(Ljava.lang.String;),updateUser(Lnet.javajigi.user.model.User;),addUser(Lnet.javajigi.user.model.User;),findUserList(),login(Ljava.lang.String;Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="89,108">
+      <children xsi:type="editmodel:MethodEditModel" name="addUser" id="net.javajigi.user.service/UserService#addUser(Lnet.javajigi.user.model.User;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="findUser" id="net.javajigi.user.service/UserService#findUser(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="findUserList" id="net.javajigi.user.service/UserService#findUserList()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="login" id="net.javajigi.user.service/UserService#login(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeUser" id="net.javajigi.user.service/UserService#removeUser(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateUser" id="net.javajigi.user.service/UserService#updateUser(Lnet.javajigi.user.model.User;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="net.javajigi.user.service/UserService->net.javajigi.user.dao/UserDAOFactory" source="//@children.0" target="//@children.4" targetEnd="//@children.0/@sourceConnections.0/@children.1" label="//@children.0/@sourceConnections.0/@children.2" sourceEnd="//@children.0/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="167,42" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,42"/>
+      <children xsi:type="editmodel:WireLabelEditModel" name="«access»" size="48,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="net.javajigi.user.service/UserService->net.javajigi.user.model/User" source="//@children.0" target="//@children.3" targetEnd="//@children.0/@sourceConnections.1/@children.1" label="//@children.0/@sourceConnections.1/@children.2" sourceEnd="//@children.0/@sourceConnections.1/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="157,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,345"/>
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.2/@sourceConnections.0 //@children.4/@sourceConnections.0" name="UserDAO" location="703,410" size="126,171" stereotype="interface" id="net.javajigi.user.dao/UserDAO" runTimeClassModel="findUser(Ljava.lang.String;),findUserList(),update(Lnet.javajigi.user.model.User;),existedUser(Ljava.lang.String;),insert(Lnet.javajigi.user.model.User;),delete(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="88,108">
+      <children xsi:type="editmodel:MethodEditModel" name="delete" location="585,455" id="net.javajigi.user.dao/UserDAO#delete(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="existedUser" id="net.javajigi.user.dao/UserDAO#existedUser(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="findUser" id="net.javajigi.user.dao/UserDAO#findUser(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="findUserList" id="net.javajigi.user.dao/UserDAO#findUserList()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insert" id="net.javajigi.user.dao/UserDAO#insert(Lnet.javajigi.user.model.User;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="update" id="net.javajigi.user.dao/UserDAO#update(Lnet.javajigi.user.model.User;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="net.javajigi.user.dao/UserDAO->net.javajigi.user.model/User" source="//@children.1" target="//@children.3" targetEnd="//@children.1/@sourceConnections.0/@children.1" label="//@children.1/@sourceConnections.0/@children.2" sourceEnd="//@children.1/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="140,345"/>
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="MySQLUserDAO" location="680,640" size="171,157" id="net.javajigi.user.dao/MySQLUserDAO" runTimeClassModel="findUser(Ljava.lang.String;),findUserList(),update(Lnet.javajigi.user.model.User;),existedUser(Ljava.lang.String;),insert(Lnet.javajigi.user.model.User;),delete(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="88,108">
+      <children xsi:type="editmodel:MethodEditModel" name="delete" id="net.javajigi.user.dao/MySQLUserDAO#delete(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="existedUser" id="net.javajigi.user.dao/MySQLUserDAO#existedUser(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="findUser" id="net.javajigi.user.dao/MySQLUserDAO#findUser(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="findUserList" id="net.javajigi.user.dao/MySQLUserDAO#findUserList()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insert" id="net.javajigi.user.dao/MySQLUserDAO#insert(Lnet.javajigi.user.model.User;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="update" id="net.javajigi.user.dao/MySQLUserDAO#update(Lnet.javajigi.user.model.User;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="net.javajigi.user.dao/UserDAO&lt;-net.javajigi.user.dao/MySQLUserDAO" source="//@children.2" target="//@children.1" targetEnd="//@children.2/@sourceConnections.0/@children.1" sourceEnd="//@children.2/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="85,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="62,171"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="net.javajigi.user.dao/MySQLUserDAO->net.javajigi.user.model/User" source="//@children.2" target="//@children.3" targetEnd="//@children.2/@sourceConnections.1/@children.1" label="//@children.2/@sourceConnections.1/@children.2" sourceEnd="//@children.2/@sourceConnections.1/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="171,56" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="140,317"/>
+      <children xsi:type="editmodel:WireLabelEditModel" name="«instantiate»" size="61,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.1 //@children.1/@sourceConnections.0 //@children.2/@sourceConnections.1" name="User" location="477,20" size="140,355" id="net.javajigi.user.model/User" runTimeClassModel="password,toString(),setEmail(Ljava.lang.String;),getName(),userId,isMatchPassword(Ljava.lang.String;),isAdmin(),getUserId(),setPassword(Ljava.lang.String;),getPassword(),setAdmin(Z),email,setUserId(Ljava.lang.String;),setName(Ljava.lang.String;),getEmail(),name,isAdmin">
+    <children xsi:type="editmodel:CompartmentEditModel" size="103,90">
+      <children xsi:type="editmodel:AttributeEditModel" name="email" location="31,36" id="net.javajigi.user.model/User#email"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="isAdmin" id="net.javajigi.user.model/User#admin"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="name" id="net.javajigi.user.model/User#name"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="password" id="net.javajigi.user.model/User#password"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="userId" id="net.javajigi.user.model/User#userId"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="117,216">
+      <children xsi:type="editmodel:MethodEditModel" name="getEmail" id="net.javajigi.user.model/User#getEmail()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getName" id="net.javajigi.user.model/User#getName()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPassword" id="net.javajigi.user.model/User#getPassword()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getUserId" id="net.javajigi.user.model/User#getUserId()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isAdmin" id="net.javajigi.user.model/User#isAdmin()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isMatchPassword" id="net.javajigi.user.model/User#isMatchPassword(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setAdmin" id="net.javajigi.user.model/User#setAdmin(Z)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setEmail" id="net.javajigi.user.model/User#setEmail(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setName" id="net.javajigi.user.model/User#setName(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setPassword" id="net.javajigi.user.model/User#setPassword(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setUserId" id="net.javajigi.user.model/User#setUserId(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="net.javajigi.user.model/User#toString()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0" name="UserDAOFactory" location="470,410" size="173,85" id="net.javajigi.user.dao/UserDAOFactory" runTimeClassModel="mYSQL_DB,getUserDAO(I)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="93,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="mYSQL_DB" id="net.javajigi.user.dao/UserDAOFactory#mYSQL_DB"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="91,18">
+      <children xsi:type="editmodel:MethodEditModel" name="getUserDAO" id="net.javajigi.user.dao/UserDAOFactory#getUserDAO(I)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" source="//@children.4" target="//@children.1" targetEnd="//@children.4/@sourceConnections.0/@children.1" label="//@children.4/@sourceConnections.0/@children.2" sourceEnd="//@children.4/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="173,42" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,42"/>
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=1" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="10,10" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showInterfaceStereotype="true" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>
