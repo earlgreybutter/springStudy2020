@@ -5,6 +5,7 @@
  */
 package net.javajigi.user.dao;
 
+import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,9 +13,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.sql.DataSource;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.tomcat.jdbc.pool.DataSource;
+import org.apache.commons.dbcp.BasicDataSource;
 
 import net.javajigi.db.ConnectionManager;
 import net.javajigi.user.model.User;
@@ -73,7 +76,7 @@ public class MySQLUserDAO implements UserDAO {
      * 
      * @see net.javajigi.user.dao.UserDAO#update(net.javajigi.user.model.User)
      */
-    public int update(User user) throws DataAccessException {
+    public int update(User user) throws DataAccessException{
     	if( logger.isDebugEnabled() ) {
     		logger.debug("update() Ω√¿€");
     		logger.debug("User : " + user);
@@ -90,7 +93,7 @@ public class MySQLUserDAO implements UserDAO {
             con = ConnectionManager.getConnection();
             pstmt = con.prepareStatement(updateQuery.toString());
             pstmt.setString(1, user.getPassword());
-            pstmt.setString(2, user.getName());
+            pstmt.setString(2, user.getName() );
             pstmt.setString(3, user.getEmail());
             pstmt.setBoolean(4, user.isAdmin());
             pstmt.setString(5, user.getUserId());
@@ -107,6 +110,7 @@ public class MySQLUserDAO implements UserDAO {
         } finally {
             close(con, pstmt);
         }
+		
     }
 
     /*

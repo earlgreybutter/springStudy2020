@@ -1,3 +1,5 @@
+<%@page import="net.javajigi.user.service.UserServiceHelper"%>
+<%@page import="net.javajigi.user.service.UserService"%>
 <%@page contentType="text/html; charset=euc-kr" %>
 <%@page import="net.javajigi.user.model.User" %>
 <%@page import="net.javajigi.user.non.NonUserService" %>
@@ -18,7 +20,7 @@
 		user.setAdmin(new Boolean(admin).booleanValue());
 	}
 	
-	NonUserService service = NonUserService.getInstance();
+	UserService service = UserServiceHelper.getUserService(application);
 	service.addUser(user);
 
 	if( user.isAdmin() ) {

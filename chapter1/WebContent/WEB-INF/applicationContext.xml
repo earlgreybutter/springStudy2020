@@ -9,7 +9,7 @@
  		</property>
  		
  		<property name="url">
- 			<value>jdbc:mysql://localhost:3306/javadb?characterEncoding=UTF-8</value>
+ 			<value>jdbc:mysql://localhost:3306/javadb?useUnicode=true&amp;characterEncoding=UTF8</value>
  		</property>
  		
 		<property name="username">

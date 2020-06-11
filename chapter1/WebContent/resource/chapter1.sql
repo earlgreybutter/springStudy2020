@@ -14,3 +14,5 @@ INSERT INTO USERINFO VALUES('admin', 'admin', '관리자', 'admin@javajigi.net', 1)
 INSERT INTO USERINFO VALUES('javajigi', 'javajigi', '자바지기', 'javajigi@javajigi.net', 0);
 
 select * from userinfo ; 
+
+ALTER DATABASE USERINFO DEFAULT CHARACTER SET utf8;

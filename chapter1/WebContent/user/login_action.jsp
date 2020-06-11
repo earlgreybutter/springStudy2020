@@ -1,3 +1,5 @@
+<%@page import="net.javajigi.user.service.UserService"%>
+<%@page import="net.javajigi.user.service.UserServiceHelper"%>
 <%@page contentType="text/html; charset=euc-kr" %>
 <%@page import="net.javajigi.user.model.User" %>
 <%@page import="net.javajigi.user.non.NonUserService" %>
@@ -7,7 +9,7 @@ try {
 	String password = request.getParameter("password");
 	
 	//모델에 로그인 작업을 위임한다.
-	NonUserService service = NonUserService.getInstance();
+	UserService service = UserServiceHelper.getUserService(application);
 	service.login(userId, password);
 
 	User user = service.findUser(userId);

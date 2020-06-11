@@ -1,3 +1,5 @@
+<%@page import="net.javajigi.user.service.UserServiceHelper"%>
+<%@page import="net.javajigi.user.service.UserService"%>
 <%@page contentType="text/html; charset=euc-kr" %>
 <%@page import="java.util.List" %>
 <%@page import="java.util.Iterator" %>
@@ -8,7 +10,7 @@
 
 <%
 	//모델을 이용하여 사용자 리스트를 가져온다.
-	NonUserService service = NonUserService.getInstance();
+	UserService service = UserServiceHelper.getUserService(application);
 	List userList = service.findUserList();
 %>
 <html>

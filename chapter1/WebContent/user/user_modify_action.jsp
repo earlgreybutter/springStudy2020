@@ -1,8 +1,11 @@
-<%@page contentType="text/html; charset=euc-kr" %>
+<%@page import="net.javajigi.user.service.UserServiceHelper"%>
+<%@page import="net.javajigi.user.service.UserService"%>
+<%@page contentType="text/html; charset=euc-kr" pageEncoding="euc-kr" %>
 <%@page import="net.javajigi.user.model.User" %>
 <%@page import="net.javajigi.user.non.NonUserService" %>
 <%@ include file="loginCheck.jsp" %>
 <%
+   request.setCharacterEncoding("euc-kr") ;
 	String userId = request.getParameter("userId");
 	String password = request.getParameter("password");
 	String name = request.getParameter("name");
@@ -18,7 +21,7 @@
 		user.setAdmin(new Boolean(admin).booleanValue());
 	}	
 	
-	NonUserService service = NonUserService.getInstance();
+	UserService service = UserServiceHelper.getUserService(application);
 	service.updateUser(user);
 
 	response.sendRedirect("user_list.jsp");

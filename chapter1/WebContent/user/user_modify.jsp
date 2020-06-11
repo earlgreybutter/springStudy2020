@@ -1,3 +1,5 @@
+<%@page import="net.javajigi.user.service.UserServiceHelper"%>
+<%@page import="net.javajigi.user.service.UserService"%>
 <%@page contentType="text/html; charset=euc-kr" %>
 <%@page import="net.javajigi.user.model.User" %>
 <%@page import="net.javajigi.user.non.NonUserService" %>
@@ -5,7 +7,7 @@
 <%
 	String userId = request.getParameter("userId");
 	
-	NonUserService service = NonUserService.getInstance();
+	UserService service = UserServiceHelper.getUserService(application);
 	User user = service.findUser(userId);
 %>
 <html>

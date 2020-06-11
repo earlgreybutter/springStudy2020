@@ -9,7 +9,7 @@ public class UserServiceHelper {
 	
 	private static final String USERSERVICE_BEANID = "userService";
 	
-	private static UserService getUserService(ServletContext ctx) {
+	public static UserService getUserService(ServletContext ctx) {
 		WebApplicationContext wac = WebApplicationContextUtils.getRequiredWebApplicationContext(ctx);
 		
 		return (UserService)wac.getBean(USERSERVICE_BEANID);
