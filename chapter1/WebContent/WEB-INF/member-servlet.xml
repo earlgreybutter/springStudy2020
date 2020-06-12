@@ -6,12 +6,11 @@
 <beans>
 <bean id="beanNameUrlMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
 
-<bean name="/hello.do" class="test.spring.mvc.HelloController"/>
-<bean name="/simple.do" class="test.spring.mvc.SimpleController"/>
+<bean name="/memberList.do" class="net.javajigi.control.MemberListController"/>
 
 
 <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-	<property name="prefix" value="/view/"/>
+	<property name="prefix" value="/user/"/>
 	<property name="suffix" value=".jsp"/>
 </bean>
 
