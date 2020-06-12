@@ -1,13 +1,6 @@
 <%@page contentType="text/html; charset=euc-kr" %>
 <%@page import="net.javajigi.user.model.User" %>
-<%
-	User user = (User)session.getAttribute("user");
-	
-	boolean isAdmin =false;
-	if( (user!=null) && (user.isAdmin()) ) {
-		isAdmin = true;
-	}
-%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
 <title>Chapter1 사용자 관리</title>
@@ -31,12 +24,12 @@ function userCreate() {
 		return false;
 	}
 	
-	f.action = "user_write_action.jsp";
+	f.action = "/chapter1/memberWriteProc.do";	// 폼의 위치를 바꾸어줌 
 	f.submit();
 }
 
 function userList() {
-	f.action = "user_list.jsp";
+	f.action = "/chapter1/userList.do";
 	f.submit();
 }
 </script>
@@ -76,18 +69,15 @@ function userList() {
 				<input type="text" style="width:300" name="email">
 			</td>
 		  </tr>	
-<%
-	if( isAdmin ) {
-%>			  
-		  <tr>
+	<c:if test="${admin}">
+	 	<tr>
 			<td width=150 align=center bgcolor="E6ECDE" height="22">Admin 유무</td>
 			<td width=450 bgcolor="ffffff" style="padding-left:10">
 				<input type="checkbox" name="admin" value="true" />
 			</td>
-		  </tr>		  	  
-<%
-	}
-%>			  
+		 </tr>		 
+	</c:if>
+			  
 	  </table>
 	  </form>
 	</td>
@@ -95,14 +85,11 @@ function userList() {
 <tr>
 	<td align=center>
 		<input type="button" value="회원 가입" onClick="userCreate()"> 
-<%
-	if( isAdmin ) {
-%>		
-		&nbsp;
-		<input type="button" value="목록" onClick="userList()">
-<%
-	}
-%>		
+
+<c:if test="${admin}">
+	&nbsp;
+	<input type="button" value="목록" onClick="userList()">
+</c:if>
 	</td>
 </tr>	  
 </table>  

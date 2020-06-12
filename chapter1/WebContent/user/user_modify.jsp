@@ -4,25 +4,21 @@
 <%@page import="net.javajigi.user.model.User" %>
 <%@page import="net.javajigi.user.non.NonUserService" %>
 <%@ include file="loginCheck.jsp" %>
-<%
-	String userId = request.getParameter("userId");
-	
-	UserService service = UserServiceHelper.getUserService(application);
-	User user = service.findUser(userId);
-%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html>
 <head>
 <title>Chapter1 사용자 관리</title>
 <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
-<link rel=stylesheet href="../css/user.css" type="text/css">
+<link rel=stylesheet href="/chapter1/css/user.css" type="text/css">
 <script language="JavaScript">
 function userModify() {
-	f.action = "user_modify_action.jsp";
+	f.action = "/chapter1/memberEditProc.do";
 	f.submit();
 }
 
 function userList() {
-	f.action = "user_list.jsp";
+	f.action = "/chapter1/memberList.do";	// user_list.jsp
 	f.submit();
 }
 </script>
@@ -37,46 +33,42 @@ function userList() {
 	<td>
 	  <!-- modify Form  -->
 	  <form name="f" method="post">
-	  <input type="hidden" name="userId" value="<%= user.getUserId() %>"/>	 
+	  <input type="hidden" name="userId" value="${user.userId}"/>	 
 	  <table border="0" cellpadding="0" cellspacing="1" width="100%" bgcolor="BBBBBB">
 		  <tr>
 			<td width=150 align=center bgcolor="E6ECDE" height="22">사용자 아이디</td>
 			<td width=450 bgcolor="ffffff" style="padding-left:10">
-				<%= user.getUserId() %>
+				${user.userId}
 			</td>
 		  </tr>
 		  <tr>
 			<td width=150 align=center bgcolor="E6ECDE" height="22">비밀번호</td>
 			<td width=450 bgcolor="ffffff" style="padding-left:10">
-				<input type="password" style="width:200" name="password" value="<%= user.getPassword() %>">
+				<input type="password" style="width:200" name="password" value="${user.password}">
 			</td>
 		  </tr>
 		  <tr>
 			<td width=150 align=center bgcolor="E6ECDE" height="22">이름</td>
 			<td width=450 bgcolor="ffffff" style="padding-left:10">
-				<input type="text" style="width:300" name="name" value="<%= user.getName() %>">
+				<input type="text" style="width:300" name="name" value="${user.name}">
 			</td>
 		  </tr>
 		  <tr>
 			<td width=150 align=center bgcolor="E6ECDE" height="22">이메일 주소</td>
 			<td width=450 bgcolor="ffffff" style="padding-left:10">
-				<input type="text" style="width:300" name="email" value="<%= user.getEmail() %>">
+				<input type="text" style="width:300" name="email" value="${user.email}">
 			</td>
 		  </tr>	
 		  <tr>
 			<td width=150 align=center bgcolor="E6ECDE" height="22">Admin 유무</td>
 			<td width=450 bgcolor="ffffff" style="padding-left:10">
-<%
-	if( user.isAdmin() ) {
-%>							
-				<input type="checkbox" name="admin" value="true" checked />
-<%
-	} else {
-%>
-				<input type="checkbox" name="admin" value="true"/>
-<%
-	}
-%>			
+
+<c:if test="${user.admin}">
+	<input type="checkbox" name="admin" value="true" checked />
+</c:if>
+<c:if test="${!user.admin}">
+	<input type="checkbox" name="admin" value="true"/>
+</c:if>
 			</td>
 		  </tr>		  	  
 	  </table>

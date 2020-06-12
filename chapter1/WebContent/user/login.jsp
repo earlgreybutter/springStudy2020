@@ -3,10 +3,10 @@
 <head>
 <title>Chapter1 사용자 관리</title>
 <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
-<link rel=stylesheet href="../css/user.css" type="text/css">
+<link rel=stylesheet href="/chapter1/css/user.css" type="text/css">
 <script language="JavaScript">
 function userCreate() {
-	f.action = "user_write.jsp";
+	f.action = "/chapter1/memberWriteForm.do";	//user_write.jsp
 	f.submit();
 }
 
@@ -22,7 +22,7 @@ function login() {
 		return false;
 	}	
 	
-	f.action = "login_action.jsp";
+	f.action = "/chapter1/memberLoginProc.do";
 	f.submit();
 }
 </script>

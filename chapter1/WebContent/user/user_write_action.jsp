@@ -1,31 +1,12 @@
-<%@page import="net.javajigi.user.service.UserServiceHelper"%>
-<%@page import="net.javajigi.user.service.UserService"%>
 <%@page contentType="text/html; charset=euc-kr" %>
-<%@page import="net.javajigi.user.model.User" %>
-<%@page import="net.javajigi.user.non.NonUserService" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<%
-	String userId = request.getParameter("userId");
-	String password = request.getParameter("password");
-	String name = request.getParameter("name");
-	String email = request.getParameter("email");
-	String admin = request.getParameter("admin");
-	
-	User user = new User();
-	user.setUserId(userId);
-	user.setPassword(password);
-	user.setName(name);
-	user.setEmail(email);
-	if ( (admin!=null) && (admin.length()>0) ) {
-		user.setAdmin(new Boolean(admin).booleanValue());
-	}
-	
-	UserService service = UserServiceHelper.getUserService(application);
-	service.addUser(user);
 
-	if( user.isAdmin() ) {
-		response.sendRedirect("user_list.jsp");
-	} else {
-		response.sendRedirect("index.jsp");
-	}
-%>
+<c:if test="${result}">
+가입처리가 되었습니다. 3초 후에 회원목록으로 이동합니다. 
+<meta http-equiv="refresh" content="3;url=/chapter1/memberList.do">
+</c:if>
+<c:if test="${!result}">
+가입처리가 되었습니다. 초기화면으로 이동합니다. 
+<meta http-equiv="refresh" content="3;url=/chapter1/user/index.jsp">
+</c:if>

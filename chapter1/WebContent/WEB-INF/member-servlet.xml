@@ -6,7 +6,17 @@
 <beans>
 <bean id="beanNameUrlMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
 
+
 <bean name="/memberList.do" class="net.javajigi.control.MemberListController"/>
+<bean name="/memberWriteForm.do" class="net.javajigi.control.MemberWriteController"/>
+<bean name="/memberWriteProc.do" class = "net.javajigi.control.MemberWriteProcController"/>
+<bean name="/memberView.do" class = "net.javajigi.control.MemberViewController"/>
+<bean name="/memberEditForm.do" class="net.javajigi.control.MemberEditFormController"/>
+ 
+<bean name="/memberEditProc.do" class="net.javajigi.control.MemberEditProcController"/>
+<bean name="/memberDelProc.do" class="net.javajigi.control.MemberDelProcController"/>
+<bean name="/memberLoginForm.do" class="net.javajigi.control.MemberLoginFormController"/>
+<bean name="/memberLoginProc.do" class="net.javajigi.control.MemberLoginProcController"/>
 
 
 <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
