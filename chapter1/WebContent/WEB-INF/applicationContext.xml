@@ -2,6 +2,7 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
 	"http://www.springframework.org/dtd/spring-beans.dtd">
 	
+	
 <beans>
  	<bean id ="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
  		<property name="driverClassName">
@@ -35,17 +36,55 @@
  		
  	</bean>
  	
- 	<bean id ="userDAO" class = "net.javajigi.user.dao.MySQLUserDAO">
+ 	<!--  -->
+ 	<bean id ="userDAOTarget" class = "net.javajigi.user.dao.MySQLUserDAO">
  		<property name="dataSource">
  			<ref local = "dataSource"/>
  		</property>
  	</bean>
  	
- 	<bean id = "userService" class="net.javajigi.user.service.UserServiceImpl">
+ 	<bean id = "userDAO" class = "org.springframework.aop.framework.ProxyFactoryBean">
+ 		<property name="target">
+ 			<ref local="userDAOTarget"/>
+ 		</property>
+ 		<property name="interceptorNames">
+ 			<list>
+ 				<value>userLoggingadvisor</value>
+ 			</list>
+ 		</property>
+ 	</bean>
+ 	
+ 	
+ 	<bean id = "userServiceTarget" class="net.javajigi.user.service.UserServiceImpl">
  		<property name="userDAO">
  			<ref local="userDAO"/>
  		</property>
  	</bean>
+ 	
+ 	<bean id = "userService" class = "org.springframework.aop.framework.ProxyFactoryBean">
+ 		<property name="target">
+ 			<ref local = "userServiceTarget"/>
+ 		</property>
+ 		<property name="interceptorNames">
+ 			<list>
+ 				<value>userLoggingadvisor</value> 
+ 			</list>
+ 		</property>
+ 	</bean>
+ 	
+ 	
+ 	<bean id = "userLoggingadvisor" class = "org.springframework.aop.support.DefaultPointcutAdvisor">
+ 		<property name="advice">
+ 			<ref local="userLoggingAdvice"/>
+ 		</property>
+ 		<property name="pointcut">
+ 			<bean class="net.javajigi.advice.UserLoggingPointcut"/>
+ 		</property>
+ 	</bean>
+ 	
+ 	<bean id = "userLoggingAdvice" class = "net.javajigi.advice.UserLoggingAdvice"/>
+ 	
+ 	<!--  -->
  	
  	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
  		<property name="basenames">

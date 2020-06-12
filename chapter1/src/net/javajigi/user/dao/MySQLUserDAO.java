@@ -3,7 +3,7 @@
  * 이 소스는 모든 개발자들이 자유롭게 수정 및 배포할 수 있습니다. 
  * 단, 이 소스를 기반으로 새로운 애플리케이션을 개발할 경우 출처를 명시해 주시면 됩니다. 
  */
-package net.javajigi.user.dao;
+package net.javajigi.user.dao; 
 
 import java.io.UnsupportedEncodingException;
 import java.sql.Connection;

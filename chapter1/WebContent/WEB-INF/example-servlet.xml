@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+	"http://www.springframework.org/dtd/spring-beans.dtd">
+	
+
+<beans>
+<bean id="beanNameUrlMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+
+<bean name="/hello.do" class="test.spring.mvc.HelloController"/>
+<bean name="/simple.do" class="test.spring.mvc.SimpleController"/>
+
+<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<property name="prefix" value="/view/"/>
+	<property name="suffix" value=".jsp"/>
+</bean>
+
+</beans>

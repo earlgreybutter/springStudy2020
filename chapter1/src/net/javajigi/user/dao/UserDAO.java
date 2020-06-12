@@ -15,7 +15,7 @@ import net.javajigi.user.model.User;
  * 
  * @author 박재성(자바지기 - javajigi@gmail.com)
  */
-public interface UserDAO {
+public interface UserDAO { 
 	/**
 	 * 사용자 관리 테이블에 새로운 사용자 생성.
 	 */

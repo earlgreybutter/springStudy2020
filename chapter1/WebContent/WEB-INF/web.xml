@@ -6,6 +6,16 @@
 
 	<description>Spring Framework Workbook Chapter1</description>
 	
+	<servlet>
+		<servlet-name>example</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>example</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	
 	<filter>
 		<filter-name>Encoding Filter</filter-name>
 		<filter-class>net.javajigi.filter.EncodingFilter</filter-class>
