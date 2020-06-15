@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="BlogUser">
+	<typeAlias alias="user" type="ex2.blog.BlogUser"/>
+	
+	<resultMap class="user" id="getBlogUser">
+		<result property="userID" column="USER_ID"/>
+		<result property="userName" column="USER_NAME"/>
+		<result property="role" column="ROLE"/>
+		<result property="password" column="PASSWORD"/>
+	</resultMap>
+	
+	<insert id="regUser" parameterClass="user">
+		INSERT INTO BLOG_USER (USER_ID, USER_NAME, ROLE, PASSWORD)
+		VALUES (#userID#, #userName#, #role#, #password#)
+	</insert>
+	
+	<select id="getBlogUserAll" resultMap="getBlogUser">
+		SELECT USER_ID, 
+			USER_NAME, 
+			ROLE, 
+			PASSWORD 
+		FROM BLOG_USER
+	</select>
+	
+	<update id="updUser" parameterClass="user">
+		UPDATE BLOG_USER SET USER_NAME = #userName#, 
+			ROLE = #role#,
+			PASSWORD = #password#
+		WHERE USER_ID = #userID#
+	</update>
+	
+	<delete id="delUser" parameterClass="user">
+		DELETE FROM BLOG_USER WHERE USER_ID = #userID#
+	</delete>
+</sqlMap>

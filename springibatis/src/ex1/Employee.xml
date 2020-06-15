@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD SQL Map 2.0//EN' 
+	'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+
+<sqlMap>
+	<typeAlias alias="emp" type="ex1.vo.Employee"/>
+	<resultMap id="empRes" class="emp">
+		<result property="empno" column="empno"/>
+		<result property="ename" column="ename"/>
+		<result property="job" column="job"/>
+		<result property="sal" column="sal"/>
+	</resultMap>
+	
+	<select id="searchJob" parameterClass="String" resultMap="empRes">
+		SELECT * FROM emp_spring WHERE job=#job#
+	</select>
+</sqlMap>
