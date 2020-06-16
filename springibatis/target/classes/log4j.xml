@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration>
+
+<configuration xmlns='http://logging.apache.org/'>
+
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%p-%C{1}.%M(%L)|%m%n"/>
+		</layout>	
+	</appender>
+	
+	<logger name="org.apache">
+		<level value="WARN"/>
+		<appender-ref ref="CONSOLE"/>
+	</logger>
+	
+	<logger name="org.springframework">
+		<level value="WARN"/>
+		<appender-ref ref="CONSOLE"/>
+	</logger>
+	
+	<logger name="guestbook">
+		<level value="WARN"/>
+		<appender-ref ref="CONSOLE"/>
+	</logger>
+
+	<root>
+		<level value="WARN"/>
+			<appender-ref ref="CONSOLE"/>
+	</root>
+</configuration>

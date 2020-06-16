@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" 
+"http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="guestbookDao" class="guestbook.dao.GuestbookDaoImpl">
+		<property name="sqlMapClient" ref="sqlMapClient"/>
+	</bean>
+	
+	<bean name="guestbookManager" class="guestbook.service.GuestbookManagerImpl">
+		<property name="guestbookDao" ref="guestbookDao"/>
+	</bean>
+	
+	<bean name="guestbookVo" class="guestbook.vo.GuestbookVo"/>
+	
+	<bean name="guestbookController" class="guestbook.controller.GuestbookController">
+		<property name="guestbookManager" ref="guestbookManager"/>
+		<property name="guestbookVo" ref="guestbookVo"/>
+	</bean>
+	
+	<bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<!-- 여기에 매핑 추가  -->
+				<prop key="/list.guest">guestbookController</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="suffix" value=".jsp"/>
+	</bean>
+</beans>
