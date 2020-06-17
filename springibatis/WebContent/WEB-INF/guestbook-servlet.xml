@@ -23,6 +23,11 @@
 			<props>
 				<!-- 여기에 매핑 추가  -->
 				<prop key="/list.guest">guestbookController</prop>
+				<prop key="/create.guest">guestbookController</prop>
+				<prop key="/read.guest">guestbookController</prop>
+				<prop key="/edit.guest">guestbookController</prop>
+				<prop key="/update.guest">guestbookController</prop>
+				<prop key="/delete.guest">guestbookController</prop>
 			</props>
 		</property>
 	</bean>

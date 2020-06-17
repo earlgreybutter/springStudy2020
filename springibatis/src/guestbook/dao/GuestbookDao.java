@@ -10,5 +10,5 @@ public interface GuestbookDao {
 	public GuestbookVo getContent(String idx);
 	public int setContent(GuestbookVo guestbookVo);
 	public int updateContent(GuestbookVo guestbookVo);
-	public int deleteContent(String no);
+	public int deleteContent(String idx);
 }

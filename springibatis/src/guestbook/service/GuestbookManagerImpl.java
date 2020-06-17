@@ -22,25 +22,25 @@ public class GuestbookManagerImpl implements GuestbookManager {
 	@Override
 	public GuestbookVo getContent(String idx) {
 		// TODO Auto-generated method stub
-		return null;
+		return guestbookDao.getContent(idx);
 	}
 
 	@Override
 	public int setContent(GuestbookVo guestbookVo) {
 		// TODO Auto-generated method stub
-		return 0;
+		return guestbookDao.setContent(guestbookVo);
 	}
 
 	@Override
 	public int updateContent(GuestbookVo guestbookVo) {
 		// TODO Auto-generated method stub
-		return 0;
+		return guestbookDao.updateContent(guestbookVo);
 	}
 
 	@Override
 	public int deleteContent(String idx) {
 		// TODO Auto-generated method stub
-		return 0;
+		return guestbookDao.deleteContent(idx);
 	}
 
 }

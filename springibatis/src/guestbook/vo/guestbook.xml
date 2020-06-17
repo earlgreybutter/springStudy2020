@@ -20,4 +20,30 @@
 			idx, password, name, subject, content, write_date 
 		FROM guestbook order by idx desc 
 	</select>
+	
+	<insert id="setContent" parameterClass="GuestbookVo">
+		<selectKey keyProperty="idx" type="pre" resultClass="int">
+			select guestbook_idx_seq.nextval as idx from dual
+		</selectKey>
+		INSERT INTO guestbook (idx, password, name, subject, content, write_date) 
+		VALUES (guestbook_idx_seq.nextval, #password#, #name#, #subject#, #content#, sysdate)
+	</insert>
+	
+	<select id="getContent" parameterClass="String" resultMap="resultGuestbook">
+		SELECT idx, password, name, subject, content, write_date 
+		FROM guestbook 
+		WHERE idx=#idx#
+	</select>
+	
+	<update id="updateContent" parameterClass="GuestbookVo">
+		UPDATE guestbook SET name = #name#, 
+								subject = #subject#, 
+								content = #content#,
+								write_date = sysdate WHERE idx = #idx#
+	</update>
+	
+	<delete id="deleteContent" parameterClass="String">
+		DELETE FROM guestbook WHERE idx = #idx#
+	</delete>
+	
 </sqlMap>

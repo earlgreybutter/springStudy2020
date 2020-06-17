@@ -14,28 +14,29 @@ public class GuestbookDaoImpl extends SqlMapClientDaoSupport implements Guestboo
 		return (List)getSqlMapClientTemplate().queryForList("getContents");
 	}
 
+	//Read
 	@Override
 	public GuestbookVo getContent(String idx) {
 		// TODO Auto-generated method stub
-		return null;
+		return (GuestbookVo)getSqlMapClientTemplate().queryForObject("getContent", idx);
 	}
 
 	@Override
 	public int setContent(GuestbookVo guestbookVo) {
 		// TODO Auto-generated method stub
-		return 0;
+		return getSqlMapClientTemplate().delete("setContent", guestbookVo);
 	}
 
 	@Override
 	public int updateContent(GuestbookVo guestbookVo) {
 		// TODO Auto-generated method stub
-		return 0;
+		return getSqlMapClientTemplate().update("updateContent", guestbookVo);
 	}
 
 	@Override
-	public int deleteContent(String no) {
+	public int deleteContent(String idx) {
 		// TODO Auto-generated method stub
-		return 0;
+		return getSqlMapClientTemplate().delete("deleteContent", idx);
 	}
 
 }
