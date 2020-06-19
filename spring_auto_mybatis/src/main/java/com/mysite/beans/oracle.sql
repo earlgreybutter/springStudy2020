@@ -12,3 +12,5 @@ CREATE TABLE "SPRING_BOARD"
 	"HITS" NUMBER(10,0),
 	PRIMARY KEY ("ID") ENABLE
 );
+
+select * from spring_board;

@@ -41,7 +41,7 @@
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 	
 	<bean id="boardMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="mapperInterface" value="mysite.com.app.BoardMapper"/>
+		<property name="mapperInterface" value="com.mysite.beans.BoardMapper"/>
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
 	</bean>
 </beans>
